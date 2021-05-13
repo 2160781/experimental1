@@ -25,6 +25,7 @@ public class MainActivity extends Activity implements OnClickListener
     private static final String TAG = "MyActivity";
     private BreakIterator recognisedText;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -35,6 +36,7 @@ public class MainActivity extends Activity implements OnClickListener
         speakButton.setOnClickListener(this);
         sr = SpeechRecognizer.createSpeechRecognizer(this);
         sr.setRecognitionListener(new listener());
+
     }
 
     class listener implements RecognitionListener
