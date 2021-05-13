@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        outputText = (TextView) findViewById(R.id.txt_output);
+
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
@@ -33,9 +36,6 @@ public class MainActivity extends AppCompatActivity {
         }catch (ActivityNotFoundException e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        outputText = (TextView) findViewById(R.id.txt_output);
-
-
     }
 
 
